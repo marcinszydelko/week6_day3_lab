@@ -36,11 +36,11 @@ describe('Cinema', function () {
   it('should be able to find a film by title', function() {
     const expected = moonlight;
     const actual = cinema.findByTitle("Moonlight");
-    assert.strictEqual(actual, expected);
+    assert.deepStrictEqual(actual, expected);
   });
   it('should be able to filter films by genre', function() {
     const expected = [moonlight, trainspotting];
-    const actual = cinema.filterByGenre("drama");
+    const actual = cinema.filterBy("genre", "drama");
     assert.deepStrictEqual(actual, expected);
   });
   it('should be able to check whether there are some films from a particular year', function () {
@@ -61,7 +61,7 @@ describe('Cinema', function () {
   });
   it('Cinema should be able to filter films by year', function () {
     const expected = [moonlight];
-    const actual = cinema.filterByYear(2016);
+    const actual = cinema.filterBy('year',2016);
     assert.deepStrictEqual(actual, expected);
   })
   it('Cinema should be able to filter', function () {
